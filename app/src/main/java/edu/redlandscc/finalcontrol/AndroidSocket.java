@@ -62,8 +62,10 @@ public class AndroidSocket extends Activity implements OnClickListener {
         server = edit.getEditableText();
         username = "admin";
         password = "72243888";
-        command = "vcbutton play 2"; /* edit4.getEditableText(); */
-        command2 = "vcbutton stop";
+        command = "wake"; /* edit4.getEditableText(); */
+        command2 = "sleep";
+        Button button2 = (Button)findViewById(R.id.button2);
+        button2.setOnClickListener(this);
         Button buttonvc = (Button)findViewById(R.id.buttonvc);
         buttonvc.setOnClickListener(this);
         text.setText("Android Socket" + "\n");
@@ -165,7 +167,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
                 catch (Exception e) {
                     e.printStackTrace();
                 }
-                break;
+        break;
 
         }}
 
@@ -233,18 +235,18 @@ public class AndroidSocket extends Activity implements OnClickListener {
     private void mypass() {
 // TODO Auto-generated method stub
         if (sb.toString().endsWith("Password: ")) {
-            out.println(password.toString() + "\r\n");
+            out.println(password + "\r\n");
             out.flush();
         } else
         if (sb.toString().endsWith("password: ")) {
-            out.println(password.toString() + "\r\n");
+            out.println(password + "\r\n");
             out.flush();
         }
     }
     private void mylogin() {
 // TODO Auto-generated method stub
         if (sb.toString().endsWith("login: ")) {
-            out.println(username.toString() + "\r");
+            out.println(username + "\r\n");
             out.flush();
         }
     }
