@@ -13,30 +13,13 @@
         android:id="@+id/imageView"
         android:src="@drawable/full_text"
         android:scaleType="fitStart"
-        android:layout_above="@+id/edit"
         android:layout_alignParentTop="true"
         android:visibility="visible"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/edit"
-        android:hint="SERVER ADDRESS"
-        android:textColor="#ffffffff"
-        android:textColorHint="#ffffffff"
-        android:singleLine="false"
-        style="@android:style/Theme.Material"
-        android:layout_centerVertical="true"
-        android:textStyle="bold"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/imageView"
-        android:layout_alignEnd="@+id/imageView"
-         />
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true" />
 
     <Button
         android:layout_width="300px"
@@ -46,9 +29,9 @@
         android:background="#7F0000"
         android:textColor="#DCB439"
         android:layout_marginTop="99dp"
-        android:layout_below="@+id/edit"
-        android:layout_alignRight="@+id/edit"
-        android:layout_alignEnd="@+id/edit" />
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView" />
 
     <Button
         android:layout_width="300px"
@@ -69,6 +52,7 @@
         android:id="@+id/text"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#00ffffff" />
 
 </RelativeLayout>

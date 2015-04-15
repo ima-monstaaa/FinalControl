@@ -4,11 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
-import android.text.Editable;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import org.apache.commons.net.telnet.*;
@@ -24,7 +22,6 @@ import java.util.concurrent.TimeUnit;
 
 public class AndroidSocket extends Activity implements OnClickListener {
     TextView text;
-    EditText edit;
     Button buttonvc;
     Button button2;
     /*Button edit4;*/
@@ -32,7 +29,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
     String command2;
     String username;
     String password;
-    Editable server;
+    String server;
     private String USER = null;
     private String PASS = null;
     private String CMD = null;
@@ -55,11 +52,10 @@ public class AndroidSocket extends Activity implements OnClickListener {
             StrictMode.setThreadPolicy(policy);
         }
         text = (TextView)findViewById(R.id.text);
-        edit = (EditText)findViewById(R.id.edit);
         buttonvc = (Button)findViewById(R.id.buttonvc);
         button2 = (Button)findViewById(R.id.button2);
        /* edit4 = (Button)findViewById(R.id.buttonvc);// (EditText)findViewById(R.id.edit4);*/
-        server = edit.getEditableText();
+        server = "164.58.136.52";
         username = "admin";
         password = "72243888";
         command = "wake"; /* edit4.getEditableText(); */
@@ -82,7 +78,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
     // TODO Auto-generated method stub
             text.setText("Android Socket" + "\n");
             try {
-                telnet.connect(server.toString(), 24);
+                telnet.connect(server, 24);
                 in = telnet.getInputStream();
                 out = new PrintStream(telnet.getOutputStream());
                 telnet.setKeepAlive(true);
@@ -128,7 +124,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
                 // TODO Auto-generated method stub
                 text.setText("Android Socket" + "\n");
                 try {
-                    telnet.connect(server.toString(), 24);
+                    telnet.connect(server, 24);
                     in = telnet.getInputStream();
                     out = new PrintStream(telnet.getOutputStream());
                     telnet.setKeepAlive(true);
