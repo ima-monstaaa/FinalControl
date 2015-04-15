@@ -32,7 +32,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
     String command2;
     String username;
     String password;
-    Editable server;
+    String server;/*Editable server;*/
     private String USER = null;
     private String PASS = null;
     private String CMD = null;
@@ -59,7 +59,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
         buttonvc = (Button)findViewById(R.id.buttonvc);
         button2 = (Button)findViewById(R.id.button2);
        /* edit4 = (Button)findViewById(R.id.buttonvc);// (EditText)findViewById(R.id.edit4);*/
-        server = edit.getEditableText();
+        server = "164.58.136.52";/*edit.getEditableText();*/
         username = "admin";
         password = "72243888";
         command = "wake"; /* edit4.getEditableText(); */
@@ -82,7 +82,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
     // TODO Auto-generated method stub
             text.setText("Android Socket" + "\n");
             try {
-                telnet.connect(server.toString(), 24);
+                telnet.connect(server, 24);
                 in = telnet.getInputStream();
                 out = new PrintStream(telnet.getOutputStream());
                 telnet.setKeepAlive(true);
@@ -128,7 +128,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
                 // TODO Auto-generated method stub
                 text.setText("Android Socket" + "\n");
                 try {
-                    telnet.connect(server.toString(), 24);
+                    telnet.connect(server, 24);
                     in = telnet.getInputStream();
                     out = new PrintStream(telnet.getOutputStream());
                     telnet.setKeepAlive(true);
