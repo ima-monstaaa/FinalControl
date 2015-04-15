@@ -39,7 +39,7 @@
          />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="300px"
         android:layout_height="wrap_content"
         android:text="SHOW PC"
         android:id="@+id/buttonvc"
@@ -51,7 +51,7 @@
         android:layout_alignEnd="@+id/edit" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="300px"
         android:layout_height="wrap_content"
         android:text="SHOW CAMERA"
         android:id="@+id/button2"
