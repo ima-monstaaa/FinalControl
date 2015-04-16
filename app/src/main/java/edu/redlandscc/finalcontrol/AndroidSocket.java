@@ -56,6 +56,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
         text = (TextView)findViewById(R.id.text);
         buttonvc = (Button)findViewById(R.id.buttonvc);
         button2 = (Button)findViewById(R.id.button2);
+        wakebtn = (Button)findViewById(R.id.wakebtn);
        /* edit4 = (Button)findViewById(R.id.buttonvc);// (EditText)findViewById(R.id.edit4);*/
         server = "164.58.136.50";
         username = "admin";
@@ -63,7 +64,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
         command = "vcbutton play 2"; /* edit4.getEditableText(); */
         command2 = "vcbutton stop";
         wakecmd = "wake";
-        Button wakebtn = (Button)findViewById(wakebtn);
+        Button wakebtn = (Button)findViewById(R.id.wakebtn);
         wakebtn.setOnClickListener(this);
         Button button2 = (Button)findViewById(R.id.button2);
         button2.setOnClickListener(this);
