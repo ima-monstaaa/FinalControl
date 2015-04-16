@@ -24,9 +24,11 @@ public class AndroidSocket extends Activity implements OnClickListener {
     TextView text;
     Button buttonvc;
     Button button2;
+    Button wakebtn;
     /*Button edit4;*/
     String command;
     String command2;
+    String wakecmd;
     String username;
     String password;
     String server;
@@ -55,11 +57,14 @@ public class AndroidSocket extends Activity implements OnClickListener {
         buttonvc = (Button)findViewById(R.id.buttonvc);
         button2 = (Button)findViewById(R.id.button2);
        /* edit4 = (Button)findViewById(R.id.buttonvc);// (EditText)findViewById(R.id.edit4);*/
-        server = "164.58.136.52";
+        server = "164.58.136.50";
         username = "admin";
         password = "72243888";
-        command = "wake"; /* edit4.getEditableText(); */
-        command2 = "sleep";
+        command = "vcbutton play 2"; /* edit4.getEditableText(); */
+        command2 = "vcbutton stop";
+        wakecmd = "wake";
+        Button wakebtn = (Button)findViewById(wakebtn);
+        wakebtn.setOnClickListener(this);
         Button button2 = (Button)findViewById(R.id.button2);
         button2.setOnClickListener(this);
         Button buttonvc = (Button)findViewById(R.id.buttonvc);
@@ -165,6 +170,54 @@ public class AndroidSocket extends Activity implements OnClickListener {
                 }
         break;
 
+            case R.id.wakebtn:
+
+
+                // TODO Auto-generated method stub
+                text.setText("Android Socket" + "\n");
+                try {
+                    telnet.connect(server, 24);
+                    in = telnet.getInputStream();
+                    out = new PrintStream(telnet.getOutputStream());
+                    telnet.setKeepAlive(true);
+                    Thread mThread = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            // TODO Auto-generated method stub
+                            try {
+                                sb = new StringBuffer();
+                                while (true)
+                                {
+                                    len = in.read();
+                                    String s = Character.toString((char)len);
+                                    sb.append( s );
+                                    AndroidSocket.this.mHandler.post(new Runnable(){
+                                        @Override
+                                        public void run() {
+                                            // TODO Auto-generated method stub
+                                            AndroidSocket.this.text.getText();
+                                            AndroidSocket.this.text.append( sb.toString() );
+                                        }
+                                    });
+                                    System.out.println( sb );
+                                    mylogin();
+                                    mypass();
+                                    mywake();
+                                }
+                            } catch (IOException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                    mThread.start();
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                break;
+
         }}
 
 
@@ -227,6 +280,37 @@ public class AndroidSocket extends Activity implements OnClickListener {
             disconnect();
         }
     }
+
+    private void mywake() throws IOException {
+// TODO Auto-generated method stub
+        if (sb.toString().endsWith("SNMP Enabled:        True")) {
+            out.println(wakecmd + "\r\n");
+            out.flush();
+            out.println("exit\r\n");
+            out.flush();
+            try {
+                TimeUnit.SECONDS.sleep(10);
+            } catch (InterruptedException e) {
+// TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            disconnect();
+        } else
+        if (sb.toString().endsWith("# ")) {
+            out.println(wakecmd + "\r\n");
+            out.flush();
+            out.println("exit\r\n");
+            out.flush();
+            try {
+                TimeUnit.SECONDS.sleep(10);
+            } catch (InterruptedException e) {
+// TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            disconnect();
+        }
+    }
+
 
     private void mypass() {
 // TODO Auto-generated method stub

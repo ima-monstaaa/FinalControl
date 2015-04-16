@@ -19,7 +19,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true" />
+        android:layout_above="@+id/buttonvc" />
 
     <Button
         android:layout_width="300px"
@@ -54,5 +54,15 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textColor="#00ffffff" />
+
+    <Button
+        android:layout_width="300px"
+        android:layout_height="wrap_content"
+        android:text="WAKE"
+        android:id="@+id/wakebtn"
+        android:background="#7F0000"
+        android:textColor="#DCB439"
+        android:layout_alignTop="@+id/buttonvc"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
