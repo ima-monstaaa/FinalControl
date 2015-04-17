@@ -14,48 +14,63 @@
         android:id="@+id/imageView"
         android:src="@drawable/full_text"
         android:scaleType="fitStart"
-        android:layout_alignParentTop="true"
         android:visibility="visible"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_above="@+id/buttonvc" />
+        android:layout_above="@+id/buttonvc"
+        android:layout_alignParentTop="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SHOW PC"
-        android:id="@+id/buttonvc"
-        android:background="#7F0000"
-        android:textColor="#DCB439"
-        android:layout_marginTop="99dp"
-        android:layout_centerVertical="true"
+
+    <com.andexert.library.RippleView
+        android:id="@+id/more4"
+        rv_centered="true"
         android:layout_alignRight="@+id/imageView"
         android:layout_alignEnd="@+id/imageView"
-        android:padding="@dimen/abc_button_padding_horizontal_material"
-        android:maxWidth="100dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/more2"
+        android:layout_alignTop="@+id/more2">
+
+        <Button
+            android:layout_marginTop="99dp"
+            android:layout_centerVertical="true"
+            android:layout_alignRight="@+id/imageView"
+            android:layout_alignEnd="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SHOW PC"
+            android:id="@+id/buttonvc"
+            android:background="@drawable/myrect"
+            android:textColor="#DCB439"
+            android:padding="@dimen/abc_button_padding_horizontal_material"
+            android:maxWidth="100dp" />
+
+    </com.andexert.library.RippleView>
+
+
 
     <com.andexert.library.RippleView
         android:id="@+id/more2"
         rv_centered="true"
-        android:layout_alignTop="@+id/buttonvc"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
 
         <Button
-
-            android:text="SHOW CAMERA"
-            android:id="@+id/button2"
-            android:textColor="#ffdcb439"
-            android:background="@drawable/myrect"
-            android:singleLine="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="WAKE"
+            android:id="@+id/wakebtn"
+            android:background="@drawable/myrect"
+            android:textColor="#DCB439"
             android:padding="@dimen/abc_button_padding_horizontal_material"
-            android:shadowColor="@color/cardview_shadow_start_color" />
+            android:maxWidth="100dp"
+            android:shadowColor="@color/cardview_shadow_end_color"
+            android:layout_alignTop="@+id/more4"
+            android:layout_centerHorizontal="true" />
 
 
     </com.andexert.library.RippleView>
@@ -73,49 +88,60 @@
         android:textColor="#00ffffff"
         android:visibility="gone" />
 
-    <Button
+    <com.andexert.library.RippleView
+        android:id="@+id/more3"
+        rv_centered="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="WAKE"
-        android:id="@+id/wakebtn"
-        android:background="#7F0000"
-        android:textColor="#DCB439"
-        android:layout_alignTop="@+id/buttonvc"
-        android:layout_centerHorizontal="true"
-        android:padding="@dimen/abc_button_padding_horizontal_material"
-        android:maxWidth="100dp"
-        android:shadowColor="@color/cardview_shadow_end_color"
-        android:translationZ="2dp"
-        android:elevation="2dp" />
+        android:layout_alignTop="@+id/more2"
+        android:layout_alignParentStart="true">
+
+        <Button
+
+            android:text="SHOW CAMERA"
+            android:id="@+id/button2"
+            android:textColor="#ffdcb439"
+            android:background="@drawable/myrect"
+            android:singleLine="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/abc_button_padding_horizontal_material"
+            android:shadowColor="@color/cardview_shadow_start_color"
+            android:layout_alignTop="@+id/wakebtn"
+            android:layout_alignParentStart="true" />
+
+    </com.andexert.library.RippleView>
+
+
 
     <com.andexert.library.RippleView
         android:id="@+id/more"
         rv_centered="true"
-        android:layout_alignStart="@+id/wakebtn"
-        android:layout_alignEnd="@+id/wakebtn"
-        android:layout_alignParentTop="false"
-        android:layout_alignParentBottom="true"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content">
+        android:layout_width="wrap_content"
+        android:layout_alignStart="@+id/more2"
+        android:layout_alignBottom="@+id/imageView">
 
         <Button
 
             android:text="Email"
             android:id="@+id/email"
             android:textColor="#DCB439"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/myrect"
             android:singleLine="false"
-            android:padding="@dimen/abc_button_padding_horizontal_material"
-            android:elevation="4dp"
-            android:translationY="4dp"
-            android:translationZ="4dp"
-            android:shadowColor="@color/cardview_shadow_start_color"/>
-
+            android:shadowColor="@color/cardview_shadow_start_color"
+            android:layout_marginBottom="48dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/more" />
 
 
     </com.andexert.library.RippleView>
+
+
+
+
 
 
 
