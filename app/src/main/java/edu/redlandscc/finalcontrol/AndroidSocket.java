@@ -1,6 +1,8 @@
 package edu.redlandscc.finalcontrol;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 
 import org.apache.commons.net.telnet.*;
 import org.apache.commons.net.telnet.TelnetClient;
+
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,6 +28,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
     Button buttonvc;
     Button button2;
     Button wakebtn;
+    Button email;
     /*Button edit4;*/
     String command;
     String command2;
@@ -57,6 +61,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
         buttonvc = (Button)findViewById(R.id.buttonvc);
         button2 = (Button)findViewById(R.id.button2);
         wakebtn = (Button)findViewById(R.id.wakebtn);
+        email = (Button)findViewById(R.id.email);
        /* edit4 = (Button)findViewById(R.id.buttonvc);// (EditText)findViewById(R.id.edit4);*/
         server = "164.58.136.50";
         username = "admin";
@@ -64,6 +69,8 @@ public class AndroidSocket extends Activity implements OnClickListener {
         command = "vcbutton play 2"; /* edit4.getEditableText(); */
         command2 = "vcbutton stop";
         wakecmd = "wake";
+        Button email = (Button)findViewById(R.id.email);
+        email.setOnClickListener(this);
         Button wakebtn = (Button)findViewById(R.id.wakebtn);
         wakebtn.setOnClickListener(this);
         Button button2 = (Button)findViewById(R.id.button2);
@@ -218,6 +225,13 @@ public class AndroidSocket extends Activity implements OnClickListener {
                 }
 
                 break;
+
+            case R.id.email:
+
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                        "mailto", "michael.cartwright@redlandscc.edu", null));
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Need help room #");
+                startActivity(Intent.createChooser(emailIntent, "Send email..."));
 
         }}
 
