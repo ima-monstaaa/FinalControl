@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/FabLib/FabLib.iml" filepath="$PROJECT_DIR$/FabLib/FabLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/FinalControl.iml" filepath="$PROJECT_DIR$/FinalControl.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

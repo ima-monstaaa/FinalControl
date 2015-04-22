@@ -11,6 +11,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
+
 import org.apache.commons.net.telnet.*;
 import org.apache.commons.net.telnet.TelnetClient;
 
@@ -24,6 +27,7 @@ import java.util.concurrent.TimeUnit;
 
 
 public class AndroidSocket extends Activity implements OnClickListener {
+
     TextView text;
     Button buttonvc;
     Button button2;
@@ -231,7 +235,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
                 Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
                         "mailto", "michael.cartwright@redlandscc.edu", null));
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Need help room #");
-                startActivity(Intent.createChooser(emailIntent, "Send email..."));
+                startActivity(Intent.createChooser(emailIntent, "Request Assistance..."));
 
         }}
 
