@@ -33,6 +33,9 @@ public class AndroidSocket extends Activity implements OnClickListener {
     Button button2;
     Button wakebtn;
     Button email;
+    FloatingActionButton action_a;
+    FloatingActionButton action_b;
+    FloatingActionButton action_c;
     /*Button edit4;*/
     String command;
     String command2;
@@ -40,6 +43,9 @@ public class AndroidSocket extends Activity implements OnClickListener {
     String username;
     String password;
     String server;
+    String mute;
+    String volumeup;
+    String volumedn;
     private String USER = null;
     private String PASS = null;
     private String CMD = null;
@@ -61,6 +67,9 @@ public class AndroidSocket extends Activity implements OnClickListener {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
+        action_a = (FloatingActionButton)findViewById(R.id.action_a);
+        action_b = (FloatingActionButton)findViewById(R.id.action_b);
+        action_c = (FloatingActionButton)findViewById(R.id.action_c);
         text = (TextView)findViewById(R.id.text);
         buttonvc = (Button)findViewById(R.id.buttonvc);
         button2 = (Button)findViewById(R.id.button2);
@@ -73,6 +82,15 @@ public class AndroidSocket extends Activity implements OnClickListener {
         command = "vcbutton play 2"; /* edit4.getEditableText(); */
         command2 = "vcbutton stop";
         wakecmd = "wake";
+        mute = "mute near toggle";
+        volumeup = "volume up";
+        volumedn = "volume down";
+        FloatingActionButton action_a = (FloatingActionButton)findViewById(R.id.action_a);
+        action_a.setOnClickListener(this);
+        FloatingActionButton action_b = (FloatingActionButton)findViewById(R.id.action_b);
+        action_b.setOnClickListener(this);
+        FloatingActionButton action_c = (FloatingActionButton)findViewById(R.id.action_c);
+        action_c.setOnClickListener(this);
         Button email = (Button)findViewById(R.id.email);
         email.setOnClickListener(this);
         Button wakebtn = (Button)findViewById(R.id.wakebtn);
@@ -237,8 +255,239 @@ public class AndroidSocket extends Activity implements OnClickListener {
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Need help room #");
                 startActivity(Intent.createChooser(emailIntent, "Request Assistance..."));
 
+            case R.id.action_c:
+
+                // TODO Auto-generated method stub
+                text.setText("Android Socket" + "\n");
+                try {
+                    telnet.connect(server, 24);
+                    in = telnet.getInputStream();
+                    out = new PrintStream(telnet.getOutputStream());
+                    telnet.setKeepAlive(true);
+                    Thread mThread = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            // TODO Auto-generated method stub
+                            try {
+                                sb = new StringBuffer();
+                                while (true)
+                                {
+                                    len = in.read();
+                                    String s = Character.toString((char)len);
+                                    sb.append( s );
+                                    AndroidSocket.this.mHandler.post(new Runnable(){
+                                        @Override
+                                        public void run() {
+                                            // TODO Auto-generated method stub
+                                            AndroidSocket.this.text.getText();
+                                            AndroidSocket.this.text.append( sb.toString() );
+                                        }
+                                    });
+                                    System.out.println( sb );
+                                    mylogin();
+                                    mypass();
+                                    mutecommand();
+                                }
+                            } catch (IOException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                    mThread.start();
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                break;
+
+            case R.id.action_b:
+
+                // TODO Auto-generated method stub
+                text.setText("Android Socket" + "\n");
+                try {
+                    telnet.connect(server, 24);
+                    in = telnet.getInputStream();
+                    out = new PrintStream(telnet.getOutputStream());
+                    telnet.setKeepAlive(true);
+                    Thread mThread = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            // TODO Auto-generated method stub
+                            try {
+                                sb = new StringBuffer();
+                                while (true)
+                                {
+                                    len = in.read();
+                                    String s = Character.toString((char)len);
+                                    sb.append( s );
+                                    AndroidSocket.this.mHandler.post(new Runnable(){
+                                        @Override
+                                        public void run() {
+                                            // TODO Auto-generated method stub
+                                            AndroidSocket.this.text.getText();
+                                            AndroidSocket.this.text.append( sb.toString() );
+                                        }
+                                    });
+                                    System.out.println( sb );
+                                    mylogin();
+                                    mypass();
+                                    volumedn();
+                                }
+                            } catch (IOException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                    mThread.start();
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                break;
+
+            case R.id.action_a:
+
+                // TODO Auto-generated method stub
+                text.setText("Android Socket" + "\n");
+                try {
+                    telnet.connect(server, 24);
+                    in = telnet.getInputStream();
+                    out = new PrintStream(telnet.getOutputStream());
+                    telnet.setKeepAlive(true);
+                    Thread mThread = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            // TODO Auto-generated method stub
+                            try {
+                                sb = new StringBuffer();
+                                while (true)
+                                {
+                                    len = in.read();
+                                    String s = Character.toString((char)len);
+                                    sb.append( s );
+                                    AndroidSocket.this.mHandler.post(new Runnable(){
+                                        @Override
+                                        public void run() {
+                                            // TODO Auto-generated method stub
+                                            AndroidSocket.this.text.getText();
+                                            AndroidSocket.this.text.append( sb.toString() );
+                                        }
+                                    });
+                                    System.out.println( sb );
+                                    mylogin();
+                                    mypass();
+                                    volumeup();
+                                }
+                            } catch (IOException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                    mThread.start();
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                break;
+
         }}
 
+
+    private void volumedn() throws IOException {
+// TODO Auto-generated method stub
+        if (sb.toString().endsWith("SNMP Enabled:        True")) {
+            out.println(volumedn + "\r\n");
+            out.flush();
+            out.println("exit\r\n");
+            out.flush();
+            try {
+                TimeUnit.SECONDS.sleep(10);
+            } catch (InterruptedException e) {
+// TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            disconnect();
+        } else
+        if (sb.toString().endsWith("# ")) {
+            out.println(volumedn + "\r\n");
+            out.flush();
+            out.println("exit\r\n");
+            out.flush();
+            try {
+                TimeUnit.SECONDS.sleep(10);
+            } catch (InterruptedException e) {
+// TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            disconnect();
+        }
+    }
+
+    private void volumeup() throws IOException {
+// TODO Auto-generated method stub
+        if (sb.toString().endsWith("SNMP Enabled:        True")) {
+            out.println(volumeup + "\r\n");
+            out.flush();
+            out.println("exit\r\n");
+            out.flush();
+            try {
+                TimeUnit.SECONDS.sleep(10);
+            } catch (InterruptedException e) {
+// TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            disconnect();
+        } else
+        if (sb.toString().endsWith("# ")) {
+            out.println(volumeup + "\r\n");
+            out.flush();
+            out.println("exit\r\n");
+            out.flush();
+            try {
+                TimeUnit.SECONDS.sleep(10);
+            } catch (InterruptedException e) {
+// TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            disconnect();
+        }
+    }
+
+    private void mutecommand() throws IOException {
+// TODO Auto-generated method stub
+        if (sb.toString().endsWith("SNMP Enabled:        True")) {
+            out.println(mute + "\r\n");
+            out.flush();
+            out.println("exit\r\n");
+            out.flush();
+            try {
+                TimeUnit.SECONDS.sleep(10);
+            } catch (InterruptedException e) {
+// TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            disconnect();
+        } else
+        if (sb.toString().endsWith("# ")) {
+            out.println(mute + "\r\n");
+            out.flush();
+            out.println("exit\r\n");
+            out.flush();
+            try {
+                TimeUnit.SECONDS.sleep(10);
+            } catch (InterruptedException e) {
+// TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            disconnect();
+        }
+    }
 
     private void mycommand2() throws IOException {
 // TODO Auto-generated method stub

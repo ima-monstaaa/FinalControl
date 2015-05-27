@@ -1,0 +1,55 @@
+{
+  "name": "__MSG_extName__",
+  "default_locale": "en",
+  "manifest_version": 2,
+  "version": "144.56987",
+  "version_name": "6.20.2",
+  "offline_enabled": true,
+  "app": {
+    "background": {
+      "page": "app_main.html"
+    }
+  },
+  "icons": {
+    "16": "icon.png",
+    "128": "icon.png"
+  },
+  "permissions": [
+    "gcm",
+    "notifications",
+    "clipboardRead",
+    "accessibilityFeatures.read",
+    "identity",
+    "videoCapture",
+    "identity.email",
+    "geolocation",
+    {"socket": ["tcp-connect", "tcp-listen", "udp-bind", "udp-send-to", "resolve-host"]},
+    "unlimitedStorage",
+    {"fileSystem": ["write"]},
+    "https://clients2.google.com/",
+    "clipboardWrite",
+    "alarms",
+    "storage",
+    "audioCapture"]
+,
+  "requirements": {
+    "3D": {
+      "features": ["webgl"]
+    }
+  },
+  "import": [{"id": "mfaihdlpglflfgpfjcifdjdjcckigekc"}],
+  "file_handlers": {"arc.types": {"types": ["video/*", "image/*"]}},
+  
+  
+  "arc_metadata": {
+    "apkList": [
+      "com.instagram.android-6.20.2-APK4Fun.com.apk"
+    ],
+    "enableExternalDirectory": false,
+    "formFactor": "tablet",
+    "name": "Instagram",
+    "orientation": "landscape",
+    "packageName": "com.instagram.android",
+    "useGoogleContactsSyncAdapter": true
+  }
+}
