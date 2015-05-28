@@ -19,8 +19,9 @@
         android:id="@+id/buttonflat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#7f0000"
-        android:text="Button"
+        android:background="#ff494949"
+        android:text="Start Class"
+        android:textColor="#DCB439"
         android:layout_alignTop="@+id/more2"
         android:layout_alignEnd="@+id/multiple_actions"
         android:layout_alignStart="@+id/textClock" />
