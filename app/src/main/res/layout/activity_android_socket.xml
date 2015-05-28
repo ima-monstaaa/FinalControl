@@ -16,15 +16,54 @@
     android:measureAllChildren="false">
 
     <com.gc.materialdesign.views.ButtonRectangle
-        android:id="@+id/buttonflat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#ff494949"
+        android:id="@+id/wakebtn"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:background="#7f0000"
         android:text="Start Class"
         android:textColor="#DCB439"
-        android:layout_alignTop="@+id/more2"
-        android:layout_alignEnd="@+id/multiple_actions"
-        android:layout_alignStart="@+id/textClock" />
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:id="@+id/email"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#ff494949"
+        android:text="email"
+        android:textColor="#DCB439"
+        android:layout_alignTop="@+id/buttonvc"
+        android:layout_alignParentEnd="true" />
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:id="@+id/button2"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:background="#7f0000"
+        android:text="Show Camera"
+        android:textColor="#DCB439"
+        android:layout_below="@+id/buttonvc"
+        android:layout_toEndOf="@+id/endbtn" />
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:id="@+id/buttonvc"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:background="#7f0000"
+        android:text="Show Computer"
+        android:textColor="#DCB439"
+        android:layout_alignTop="@+id/wakebtn"
+        android:layout_toEndOf="@+id/wakebtn" />
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:id="@+id/endbtn"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:background="#7f0000"
+        android:text="End Class"
+        android:textColor="#DCB439"
+        android:layout_below="@+id/wakebtn"
+        android:layout_alignParentStart="true" />
 
 
     <TextView
@@ -37,125 +76,6 @@
         android:layout_alignParentStart="true"
         android:textColor="#00ffffff"
         android:visibility="gone" />
-
-
-    <com.andexert.library.RippleView
-        android:id="@+id/more2"
-        rv_centered="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:translationZ="5dp"
-        android:background="@drawable/myrect"
-        android:layout_gravity="left|center_vertical">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="WAKE"
-            android:id="@+id/wakebtn"
-            android:background="@drawable/myrect"
-            android:textColor="#DCB439"
-            android:padding="@dimen/abc_button_padding_horizontal_material"
-            android:maxWidth="100dp"
-            android:layout_alignTop="@+id/more4"
-            android:layout_centerHorizontal="true"
-            android:translationZ="5dp"
-            android:layout_gravity="left|center_vertical" />
-
-
-    </com.andexert.library.RippleView>
-
-    <com.andexert.library.RippleView
-        android:id="@+id/more3"
-        rv_centered="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/myrect"
-        android:translationZ="5dp"
-        android:layout_gravity="right|center_vertical"
-        android:layout_alignTop="@+id/more"
-        android:layout_alignParentStart="true">
-
-        <Button
-
-            android:text="SHOW CAMERA"
-            android:id="@+id/button2"
-            android:textColor="#ffdcb439"
-            android:background="@drawable/myrect"
-            android:singleLine="false"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/abc_button_padding_horizontal_material"
-            android:layout_alignTop="@+id/wakebtn"
-            android:layout_alignParentStart="true"
-            android:translationZ="5dp"
-            android:layout_gravity="right|center_vertical" />
-
-    </com.andexert.library.RippleView>
-
-    <com.andexert.library.RippleView
-        android:id="@+id/more"
-        rv_centered="true"
-        android:layout_height="50dp"
-        android:layout_width="wrap_content"
-        android:maxHeight="50dp"
-        android:background="@drawable/myrect"
-        android:translationZ="5dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/more2"
-        android:layout_marginBottom="40dp"
-        android:layout_gravity="center_horizontal|bottom">
-
-        <Button
-
-            android:text="Email"
-            android:id="@+id/email"
-            android:textColor="#DCB439"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/myrect"
-            android:singleLine="false"
-            android:height="50dp"
-            android:nestedScrollingEnabled="false"
-            android:translationZ="5dp"
-            android:layout_alignTop="@+id/more"
-            android:layout_alignStart="@+id/more"
-            android:layout_gravity="center" />
-
-
-    </com.andexert.library.RippleView>
-
-    <com.andexert.library.RippleView
-        android:id="@+id/more4"
-        rv_centered="true"
-        android:layout_width="wrap_content"
-        android:layout_height="49dp"
-        android:layout_alignBottom="@+id/more2"
-        android:layout_alignTop="@+id/more2"
-        android:translationZ="5dp"
-        android:background="@drawable/myrect"
-        android:layout_gravity="center">
-
-        <Button
-            android:layout_marginTop="99dp"
-            android:layout_centerVertical="true"
-            android:layout_alignRight="@+id/imageView"
-            android:layout_alignEnd="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SHOW PC"
-            android:id="@+id/buttonvc"
-            android:background="@drawable/myrect"
-            android:textColor="#DCB439"
-            android:padding="@dimen/abc_button_padding_horizontal_material"
-            android:maxWidth="100dp"
-            android:translationZ="5dp"
-            android:layout_gravity="left|bottom" />
-
-    </com.andexert.library.RippleView>
-
 
 
     <TextClock
@@ -180,8 +100,7 @@
         android:src="@drawable/logodrop"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_alignBottom="@+id/textClock"
-        android:layout_toStartOf="@+id/more2" />
+        android:layout_alignBottom="@+id/textClock" />
 
     <com.getbase.floatingactionbutton.FloatingActionsMenu
         android:id="@+id/multiple_actions"
@@ -193,8 +112,7 @@
         fab:fab_labelStyle="@style/menu_labels_style"
         android:layout_marginRight="16dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/textClock"
-        android:layout_toEndOf="@+id/more2">
+        android:layout_toEndOf="@+id/imageView">
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/action_a"

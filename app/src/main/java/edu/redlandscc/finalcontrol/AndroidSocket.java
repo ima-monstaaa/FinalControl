@@ -11,6 +11,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.gc.materialdesign.views.ButtonRectangle;
+
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
@@ -29,10 +31,10 @@ import java.util.concurrent.TimeUnit;
 public class AndroidSocket extends Activity implements OnClickListener {
 
     TextView text;
-    Button buttonvc;
-    Button button2;
-    Button wakebtn;
-    Button email;
+    ButtonRectangle buttonvc;
+    ButtonRectangle button2;
+    ButtonRectangle wakebtn;
+    ButtonRectangle email;
     FloatingActionButton action_a;
     FloatingActionButton action_b;
     FloatingActionButton action_c;
@@ -71,10 +73,10 @@ public class AndroidSocket extends Activity implements OnClickListener {
         action_b = (FloatingActionButton)findViewById(R.id.action_b);
         action_c = (FloatingActionButton)findViewById(R.id.action_c);
         text = (TextView)findViewById(R.id.text);
-        buttonvc = (Button)findViewById(R.id.buttonvc);
-        button2 = (Button)findViewById(R.id.button2);
-        wakebtn = (Button)findViewById(R.id.wakebtn);
-        email = (Button)findViewById(R.id.email);
+        buttonvc = (ButtonRectangle)findViewById(R.id.buttonvc);
+        button2 = (ButtonRectangle)findViewById(R.id.button2);
+        wakebtn = (ButtonRectangle)findViewById(R.id.wakebtn);
+        email = (ButtonRectangle)findViewById(R.id.email);
        /* edit4 = (Button)findViewById(R.id.buttonvc);// (EditText)findViewById(R.id.edit4);*/
         server = "164.58.136.50";
         username = "admin";
@@ -91,13 +93,13 @@ public class AndroidSocket extends Activity implements OnClickListener {
         action_b.setOnClickListener(this);
         FloatingActionButton action_c = (FloatingActionButton)findViewById(R.id.action_c);
         action_c.setOnClickListener(this);
-        Button email = (Button)findViewById(R.id.email);
+        ButtonRectangle email = (ButtonRectangle)findViewById(R.id.email);
         email.setOnClickListener(this);
-        Button wakebtn = (Button)findViewById(R.id.wakebtn);
+        ButtonRectangle wakebtn = (ButtonRectangle)findViewById(R.id.wakebtn);
         wakebtn.setOnClickListener(this);
-        Button button2 = (Button)findViewById(R.id.button2);
+        ButtonRectangle button2 = (ButtonRectangle)findViewById(R.id.button2);
         button2.setOnClickListener(this);
-        Button buttonvc = (Button)findViewById(R.id.buttonvc);
+        ButtonRectangle buttonvc = (ButtonRectangle)findViewById(R.id.buttonvc);
         buttonvc.setOnClickListener(this);
         text.setText("Android Socket" + "\n");
     }
