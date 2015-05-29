@@ -5,8 +5,8 @@
     xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".AndroidSocket"
@@ -17,53 +17,50 @@
 
     <com.gc.materialdesign.views.ButtonRectangle
         android:id="@+id/wakebtn"
-        android:layout_width="250dp"
-        android:layout_height="100dp"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
         android:background="#7f0000"
         android:text="Start Class"
         android:textColor="#DCB439"
         android:layout_centerVertical="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:translationZ="5dp" />
 
-    <com.gc.materialdesign.views.ButtonRectangle
-        android:id="@+id/email"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="#ff494949"
-        android:text="email"
-        android:textColor="#DCB439"
-        android:layout_alignTop="@+id/buttonvc"
-        android:layout_alignParentEnd="true" />
+
 
     <com.gc.materialdesign.views.ButtonRectangle
         android:id="@+id/button2"
-        android:layout_width="250dp"
-        android:layout_height="100dp"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
         android:background="#7f0000"
         android:text="Show Camera"
         android:textColor="#DCB439"
         android:layout_below="@+id/buttonvc"
-        android:layout_toEndOf="@+id/endbtn" />
+        android:layout_toEndOf="@+id/endbtn"
+        android:translationZ="5dp" />
 
     <com.gc.materialdesign.views.ButtonRectangle
         android:id="@+id/buttonvc"
-        android:layout_width="250dp"
-        android:layout_height="100dp"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
         android:background="#7f0000"
         android:text="Show Computer"
         android:textColor="#DCB439"
         android:layout_alignTop="@+id/wakebtn"
-        android:layout_toEndOf="@+id/wakebtn" />
+        android:layout_toEndOf="@+id/wakebtn"
+        android:translationZ="5dp" />
 
     <com.gc.materialdesign.views.ButtonRectangle
         android:id="@+id/endbtn"
-        android:layout_width="250dp"
-        android:layout_height="100dp"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
         android:background="#7f0000"
         android:text="End Class"
         android:textColor="#DCB439"
         android:layout_below="@+id/wakebtn"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/wakebtn"
+        android:translationZ="5dp" />
 
 
     <TextView
@@ -89,18 +86,17 @@
         android:password="false"
         android:translationZ="5dp"
         android:gravity="center|fill"
-        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@+id/ImageView"
         android:layout_alignParentEnd="true" />
 
     <ImageView
         android:layout_width="338dp"
         android:layout_height="83dp"
-        android:id="@+id/imageView"
+        android:id="@+id/ImageView"
         android:layout_gravity="right|top"
         android:src="@drawable/logodrop"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignBottom="@+id/textClock" />
+        android:layout_below="@+id/email"
+        android:layout_alignParentStart="true" />
 
     <com.getbase.floatingactionbutton.FloatingActionsMenu
         android:id="@+id/multiple_actions"
@@ -112,7 +108,8 @@
         fab:fab_labelStyle="@style/menu_labels_style"
         android:layout_marginRight="16dp"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/imageView">
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/button2">
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/action_a"
@@ -120,7 +117,8 @@
             android:layout_height="wrap_content"
             fab:fab_colorNormal="@color/white"
             fab:fab_title="Volume Y"
-            fab:fab_colorPressed="@color/white_pressed"/>
+            fab:fab_colorPressed="@color/white_pressed"
+            materialdesign:iconDrawable="@drawable/volup" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/action_b"
@@ -128,7 +126,8 @@
             android:layout_height="wrap_content"
             fab:fab_colorNormal="@color/white"
             fab:fab_title="Volume X"
-            fab:fab_colorPressed="@color/white_pressed"/>
+            fab:fab_colorPressed="@color/white_pressed"
+            materialdesign:iconDrawable="@drawable/voldn" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/action_c"
@@ -136,9 +135,18 @@
             android:layout_height="wrap_content"
             fab:fab_colorNormal="@color/white"
             fab:fab_title="Volume MUTE"
-            fab:fab_colorPressed="@color/white_pressed"/>
+            fab:fab_colorPressed="@color/white_pressed"
+            materialdesign:iconDrawable="@drawable/volmute" />
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:id="@+id/email"
+        android:background="@drawable/help_text"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/multiple_actions" />
 
 
 </RelativeLayout>
