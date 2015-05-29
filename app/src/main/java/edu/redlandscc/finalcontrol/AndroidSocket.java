@@ -40,7 +40,6 @@ public class AndroidSocket extends Activity implements OnClickListener {
     FloatingActionButton action_a;
     FloatingActionButton action_b;
     FloatingActionButton action_c;
-    /*Button edit4;*/
     String command;
     String command2;
     String wakecmd;
@@ -81,11 +80,10 @@ public class AndroidSocket extends Activity implements OnClickListener {
         wakebtn = (ButtonRectangle)findViewById(R.id.wakebtn);
         endbtn = (ButtonRectangle)findViewById(R.id.endbtn);
         email = (ImageView)findViewById(R.id.email);
-       /* edit4 = (Button)findViewById(R.id.buttonvc);// (EditText)findViewById(R.id.edit4);*/
         server = "164.58.136.50";
         username = "admin";
         password = "72243888";
-        command = "vcbutton play 2"; /* edit4.getEditableText(); */
+        command = "vcbutton play 2";
         command2 = "vcbutton stop";
         wakecmd = "wake";
         mute = "mute near toggle";
