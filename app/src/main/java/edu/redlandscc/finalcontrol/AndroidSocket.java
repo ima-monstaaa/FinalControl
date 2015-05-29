@@ -83,7 +83,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
         server = "164.58.136.50";
         username = "admin";
         password = "72243888";
-        command = "vcbutton play 2";
+        command = "vcbutton play 6";
         command2 = "vcbutton stop";
         wakecmd = "wake";
         mute = "mute near toggle";
@@ -461,7 +461,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
             out.println("exit\r\n");
             out.flush();
             try {
-                TimeUnit.SECONDS.sleep(1);
+                TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -474,7 +474,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
             out.println("exit\r\n");
             out.flush();
             try {
-                TimeUnit.SECONDS.sleep(1);
+                TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -491,7 +491,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
             out.println("exit\r\n");
             out.flush();
             try {
-                TimeUnit.SECONDS.sleep(1);
+                TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -504,7 +504,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
             out.println("exit\r\n");
             out.flush();
             try {
-                TimeUnit.SECONDS.sleep(1);
+                TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -521,7 +521,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
             out.println("exit\r\n");
             out.flush();
             try {
-                TimeUnit.SECONDS.sleep(1);
+                TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -534,7 +534,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
             out.println("exit\r\n");
             out.flush();
             try {
-                TimeUnit.SECONDS.sleep(1);
+                TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -551,7 +551,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
             out.println("exit\r\n");
             out.flush();
             try {
-                TimeUnit.SECONDS.sleep(1);
+                TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -564,7 +564,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
             out.println("exit\r\n");
             out.flush();
             try {
-                TimeUnit.SECONDS.sleep(1);
+                TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -581,7 +581,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
             out.println("exit\r\n");
             out.flush();
             try {
-                TimeUnit.SECONDS.sleep(1);
+                TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -594,7 +594,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
             out.println("exit\r\n");
             out.flush();
             try {
-                TimeUnit.SECONDS.sleep(1);
+                TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -611,7 +611,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
             out.println("exit\r\n");
             out.flush();
             try {
-                TimeUnit.SECONDS.sleep(1);
+                TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -624,7 +624,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
             out.println("exit\r\n");
             out.flush();
             try {
-                TimeUnit.SECONDS.sleep(1);
+                TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -641,7 +641,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
             out.println("exit\r\n");
             out.flush();
             try {
-                TimeUnit.SECONDS.sleep(1);
+                TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -654,7 +654,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
             out.println("exit\r\n");
             out.flush();
             try {
-                TimeUnit.SECONDS.sleep(1);
+                TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
 // TODO Auto-generated catch block
                 e.printStackTrace();
