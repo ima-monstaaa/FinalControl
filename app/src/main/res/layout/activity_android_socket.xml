@@ -141,7 +141,7 @@
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
     <ImageView
-        android:layout_width="92dp"
+        android:layout_width="93dp"
         android:layout_height="50dp"
         android:id="@+id/email"
         android:background="@drawable/help_text"
