@@ -58,7 +58,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
     private TelnetClient telnet = new TelnetClient();
     private InputStream in;
     private PrintStream out;
-    StringBuffer sb;
+    StringBuilder sb;
     Handler mHandler = new Handler();
     int len;
 
@@ -129,7 +129,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
                     public void run() {
     // TODO Auto-generated method stub
                         try {
-                            sb = new StringBuffer();
+                            sb = new StringBuilder();
                             while (true)
                             {
                                 len = in.read();
@@ -175,7 +175,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
                         public void run() {
                             // TODO Auto-generated method stub
                             try {
-                                sb = new StringBuffer();
+                                sb = new StringBuilder();
                                 while (true)
                                 {
                                     len = in.read();
@@ -222,7 +222,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
                         public void run() {
                             // TODO Auto-generated method stub
                             try {
-                                sb = new StringBuffer();
+                                sb = new StringBuilder();
                                 while (true)
                                 {
                                     len = in.read();
@@ -269,7 +269,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
                         public void run() {
                             // TODO Auto-generated method stub
                             try {
-                                sb = new StringBuffer();
+                                sb = new StringBuilder();
                                 while (true)
                                 {
                                     len = in.read();
@@ -323,7 +323,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
                         public void run() {
                             // TODO Auto-generated method stub
                             try {
-                                sb = new StringBuffer();
+                                sb = new StringBuilder();
                                 while (true)
                                 {
                                     len = in.read();
@@ -370,7 +370,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
                         public void run() {
                             // TODO Auto-generated method stub
                             try {
-                                sb = new StringBuffer();
+                                sb = new StringBuilder();
                                 while (true)
                                 {
                                     len = in.read();
@@ -417,7 +417,7 @@ public class AndroidSocket extends Activity implements OnClickListener {
                         public void run() {
                             // TODO Auto-generated method stub
                             try {
-                                sb = new StringBuffer();
+                                sb = new StringBuilder();
                                 while (true)
                                 {
                                     len = in.read();
