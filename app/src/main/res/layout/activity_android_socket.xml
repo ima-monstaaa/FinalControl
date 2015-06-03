@@ -24,23 +24,23 @@
         android:textColor="#DCB439"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
-        android:translationZ="5dp" />
+        android:translationZ="10dp" />
 
 
 
     <com.gc.materialdesign.views.ButtonRectangle
-        android:id="@+id/button2"
+        android:id="@+id/cambtn"
         android:layout_width="300dp"
         android:layout_height="150dp"
         android:background="#7f0000"
         android:text="Show Camera"
         android:textColor="#DCB439"
-        android:layout_below="@+id/buttonvc"
+        android:layout_below="@+id/pcbtn"
         android:layout_toEndOf="@+id/endbtn"
-        android:translationZ="5dp" />
+        android:translationZ="10dp" />
 
     <com.gc.materialdesign.views.ButtonRectangle
-        android:id="@+id/buttonvc"
+        android:id="@+id/pcbtn"
         android:layout_width="300dp"
         android:layout_height="150dp"
         android:background="#7f0000"
@@ -48,7 +48,7 @@
         android:textColor="#DCB439"
         android:layout_alignTop="@+id/wakebtn"
         android:layout_toEndOf="@+id/wakebtn"
-        android:translationZ="5dp" />
+        android:translationZ="10dp" />
 
     <com.gc.materialdesign.views.ButtonRectangle
         android:id="@+id/endbtn"
@@ -60,7 +60,7 @@
         android:layout_below="@+id/wakebtn"
         android:layout_alignParentStart="true"
         android:layout_alignEnd="@+id/wakebtn"
-        android:translationZ="5dp" />
+        android:translationZ="10dp" />
 
 
     <TextView
@@ -109,14 +109,15 @@
         android:layout_marginRight="16dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/button2">
+        android:layout_toEndOf="@+id/cambtn"
+        android:translationZ="5dp">
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/action_a"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             fab:fab_colorNormal="@color/white"
-            fab:fab_title="Volume Y"
+            fab:fab_title="Volume UP"
             fab:fab_colorPressed="@color/white_pressed"
             materialdesign:iconDrawable="@drawable/volup" />
 
@@ -125,7 +126,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             fab:fab_colorNormal="@color/white"
-            fab:fab_title="Volume X"
+            fab:fab_title="Volume DOWN"
             fab:fab_colorPressed="@color/white_pressed"
             materialdesign:iconDrawable="@drawable/voldn" />
 
@@ -146,7 +147,8 @@
         android:id="@+id/email"
         android:background="@drawable/help_text"
         android:layout_alignParentTop="true"
-        android:layout_alignEnd="@+id/multiple_actions" />
+        android:layout_alignEnd="@+id/multiple_actions"
+        android:translationZ="5dp" />
 
 
 </RelativeLayout>
